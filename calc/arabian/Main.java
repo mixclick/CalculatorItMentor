@@ -16,8 +16,6 @@ public class Main {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
-
     }
     public static String calc(String input) throws Exception {
 
@@ -28,11 +26,8 @@ public class Main {
         Operations operations = new Operations();
 
         int result = operations.actions(parseInput);
-        //boolean system = operations.isRoman(parseInput);
 
-        //return operations.result(result, system);
         return operations.result(result);
-
     }
 
 }
