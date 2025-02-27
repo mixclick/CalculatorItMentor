@@ -10,12 +10,17 @@ public class Operations {
         valueAction = values.get(1);
         valueSecond = values.get(2);
 
-        int result;
+        int result, num1, num2;
 
-        int num1 = Integer.parseInt(valueFirst);
-        int num2 = Integer.parseInt(valueSecond);
+        try {
+             num1 = Integer.parseInt(valueFirst);
+             num2 = Integer.parseInt(valueSecond);
+        } catch (Exception e) {
+            throw new Exception("Ошибка : Некорректный ввод");
+        }
+
         if (num1 > 10 || num2 > 10) {
-            throw new Exception("Ошибка : т.к. число больше 10");
+            throw new Exception("Ошибка : Число больше 10");
         }
 
         switch (valueAction) {
@@ -28,9 +33,12 @@ public class Operations {
             case "*":
                 result = num1 * num2;
                 break;
-            default:
+            case "/":
                 result = num1 / num2;
                 break;
+            default:
+                throw new Exception("Некорректный ввод");
+
         }
         return result;
     }
